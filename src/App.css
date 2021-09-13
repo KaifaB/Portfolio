@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 body{
+  width: 100%;
   background: rgb(243,231,233);
   background: linear-gradient(90deg, rgba(243,231,233,1) 17%, rgba(227,238,255,1) 100%);
   overflow-x: hidden;
@@ -13,62 +14,148 @@ body{
   width: 100%;
   height: 100vh;
 }
+/*-----------------------MOBILE CSS------------------------*/
+@media only screen and (max-width: 815px) {
+  .body{
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .whole{
+    width:100%;
+  }
+  .App{
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .header{
+    border-bottom: solid white 1px;
+    font-family: 'Work Sans', sans-serif;
+    background:white;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width:100vw;
+    height: 40px;
+    z-index: 2;
+  }
+  .nav ul{
+    margin: auto 0;
+    display: flex;
+    
+  }
+  .nav ul li{
+    list-style: none;
+    margin: 0 16px;
+    transition: 0.4s ease;
+    font-size: 8px;
+  }
+  .nav ul li:hover{
+    cursor: pointer;
+    color: rgb(54, 73, 98);
+  }
+  .nav a{
+    text-decoration: none;
+    color: rgb(163, 163, 163);
+  }
+  .align{
+    margin: none;
+  }
+  .hero{
+    
+  }
+  .hero h2{
+    margin-top: 80px;
+    margin-left: 30px;;
+    font-family: 'Chango', cursive;
+    font-size: 2em;
+  }
+  .hero-flex{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #development{
+    width: 300px;
+    align-self: center;
+  }
+  .intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+  .technologies::before{
+    content: '//TECHNOLOGIES';
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+
+
+  .projects::before{
+    content: '//PROJECTS';
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    font-size: 2rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+/*---------------NONMOBILE APPROPRIATE---------------------*/
+@media only screen and (min-width: 816px) {
+  .whole{
+    width:100%;
+  }
+  .align{
+    margin: 110px 40px 0 60px;
+    
+  }
+  .hero h2{
+    margin-top: 60px;
+    font-family: 'Chango', cursive;
+    font-size: 6em;
+    text-align: center;
+  }
+  .hero-flex{
+    margin-top:40px;
+    display: flex;
+    justify-content: center;
+  }
+  #development{
+    width: 600px;
+  }
+  .intro{
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+  }
+
+
+
+  .technologies::before{
+    content: '//TECHNOLOGIES';
+    position: absolute;
+    top: 40px;
+    left: 80px;
+    font-size: 6rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+}
 /*------------HEADER/NAV SECTION----------------*/
-.header{
-  border-bottom: solid white 1px;
-  font-family: 'Work Sans', sans-serif;
-  /*background: #282C34;*/
-  /*background: #b6d3ff;*/
-  background:white;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  position: fixed;
-  width:100%;
-  height: 60px;
-  z-index: 2;
-}
-.nav ul{
-  margin: auto 0;
-  display: flex;
-  
-}
-.nav ul li{
-  list-style: none;
-  margin: 0 16px;
-  transition: 0.4s ease;
-}
-.nav ul li:hover{
-  cursor: pointer;
-  color: rgb(54, 73, 98);
-}
-.nav a{
-  text-decoration: none;
-  color: rgb(163, 163, 163);
-}
+
+
 /*---------------HERO SECTION--------------------*/
 .hero{
   height: 100vh;
 }
-#development{
-  width: 600px;
-}
-.hero-flex{
-  margin-top:40px;
-  display: flex;
-  justify-content: center;
-}
-.intro{
-  display:flex;
-  flex-direction: column;
-  align-self: center;
-}
-.hero h2{
-  margin-top: 60px;
-  font-family: 'Chango', cursive;
-  font-size: 6em;
-  text-align: center;
-}
+
 .intro h4{
   font-family: 'Bebas Neue', cursive;
 }
@@ -134,7 +221,6 @@ body{
 
 .align{
   width: 100%;
-  margin: 110px 40px 0 60px;
 }
 /*------------------TECHNOLOGIES --------------*/
 .technologies{
@@ -145,14 +231,6 @@ body{
   display: flex;
   justify-content: center;
   flex-flow: wrap;
-}
-.technologies::before{
-  content: '//TECHNOLOGIES';
-  position: absolute;
-  top: 40px;
-  left: 80px;
-  font-size: 6rem;
-  font-family: 'Orbitron', sans-serif;
 }
 .technologies::after{
   content:'';
@@ -237,14 +315,6 @@ Tilt {
   background: #83C041;
 }
 /*------------PROJECTS SECTION -------------*/
-.projects::before{
-  content: '//PROJECTS';
-  position: absolute;
-  top: 40px;
-  left: 80px;
-  font-size: 6rem;
-  font-family: 'Orbitron', sans-serif;
-}
 .container {
   display: grid;
 }
@@ -264,6 +334,7 @@ Tilt {
   padding-top: 170px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
 }
 .container{
@@ -409,3 +480,4 @@ Tilt {
   from, to { border-color: transparent }
   50% { border-color: orange }
 }
+
