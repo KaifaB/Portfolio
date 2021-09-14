@@ -17,7 +17,7 @@ function Home() {
         <div className="socials">
           {Socials.map((curr, key) => {
             return(
-          <Social id="" key={key} icon={curr.icon} color={curr.color}/>
+          <Social id="" key={key} icon={curr.icon} color={curr.color} site={curr.link}/>
             )
           })}
           <div className="line"></div>

@@ -37,7 +37,7 @@ function Projects() {
       <div className="projects">
           {Projs.map((curr, id) => {
             return(
-                <div data-aos="fade-left" key={id} className="container">
+                <div data-aos="fade-up" key={id} className="container">
                     <h1>{curr.name}</h1>
                     <div className="content" >
                         <FaRegHandPointer id={"pointer" + id} />
@@ -45,8 +45,8 @@ function Projects() {
                     </div>
                     <div id={"overlay" + id} onMouseEnter={show} onMouseLeave={gone}>
                         <div id ={id} className="flex">
-                            <button id={id} className="proj-btn">Website</button>
-                            <button id={id} className="proj-btn">Code</button>
+                            <a href={curr.link}><button id={id} className="proj-btn">Website</button></a>
+                            <a href={curr.git}><button id={id} className="proj-btn">Code</button></a>
                         </div>
                     </div>
                     <p>Coded in {curr.tech}</p>

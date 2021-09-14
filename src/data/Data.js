@@ -60,25 +60,29 @@ const Technologies = [
 const Socials= [
     {icon: FaLinkedin,
     color: "#2867B2",
-    link: ""},
+    link: "https://www.linkedin.com/in/kaifa-best-84908375"},
     {icon: FaTwitter,
-    color: "#6e5494",
-    link: ""},
-    {icon: FaGithub,
     color: "#1DA1F2",
-    link: ""},
+    link: "https://twitter.com/KiteSura"},
+    {icon: FaGithub,
+    color: "#6e5494",
+    link: "https://github.com/KaifaB"},
   ];
 
   const Projs = [
     {
         name: "Huntley Hub",
         image: Project1,
-        tech: "HTML, CSS, Javascript, MySQL, PHP"
+        tech: "HTML, CSS, Javascript, MySQL, PHP",
+        link: "https://huntleyhub.com/",
+        git: ""
     },
     {
         name: "Rental Stars",
         image: Project2,
-        tech: "React, Node, Express"
+        tech: "React, Node, Express",
+        link: "",
+        git: ""
     }
   ]
 export { Technologies, Socials, Projs};

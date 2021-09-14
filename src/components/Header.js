@@ -8,7 +8,6 @@ function Header( props ) {
           </div>
           <div className="nav">
               <ul>
-                <a href="#"><li>About Me</li></a>
                 <a href="#section-2"><li>Technologies</li></a>
                 <a href="#section-3"><li>Projects</li></a>
                 <a href="#section-4"><li>Contact</li></a>

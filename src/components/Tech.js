@@ -9,7 +9,7 @@ function Tech( props ) {
     Aos.init({duration: 1500});
   }, [])
     return (
-      <Tilt data-aos="fade-left" className="tech-box" options={{ perspective: 100, max: 55, glare: true, "max-glare": 1 }} id={props.name}>
+      <Tilt data-aos="fade-up" className="tech-box" options={{ perspective: 100, max: 55, glare: true, "max-glare": 1 }} id={props.name}>
         <div className="real-tech">
           <div>
             <props.icon class="tech-icon" height="large"/>
