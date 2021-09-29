@@ -15,7 +15,7 @@ function TextArea( props ) {
 
     },[text])
     return (
-        <textarea id="message" value = {text} onChange={change} onFocus={color} onBlur={none} required/>
+        <textarea id="message" name="message" value = {text} onChange={change} onFocus={color} onBlur={none} required/>
     );
   }
   

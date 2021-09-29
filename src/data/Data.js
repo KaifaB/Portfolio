@@ -2,7 +2,8 @@ import { FaHtml5, FaCss3Alt, FaReact, FaWordpress, FaBootstrap, FaNode, FaNodeJs
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
 import { SiJavascript, SiPhp, SiMysql, SiJquery, SiMongodb } from 'react-icons/si'
 import Project1 from '../img/Project1.png';
-import Project2 from '../img/Project1.png';
+import Project2 from '../img/Project2.png';
+import Project3 from '../img/Project3.png';
 
 
 const Technologies = [
@@ -81,8 +82,15 @@ const Socials= [
         name: "Rental Stars",
         image: Project2,
         tech: "React, Node, Express",
+        link: "https://rental-stars.herokuapp.com/",
+        git: "https://github.com/KaifaB/rental-stars"
+    },
+    {
+        name: "My Portfolio",
+        image: Project3,
+        tech: "React, (PHP Mailer)",
         link: "",
-        git: ""
+        git: "https://github.com/KaifaB/Portfolio"
     }
   ]
 export { Technologies, Socials, Projs};

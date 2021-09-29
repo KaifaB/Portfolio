@@ -1,12 +1,6 @@
 import React from 'react';
 import hero from '../img/development.png';
 
-/*const titles = [
-    'Web Developer',
-    'Web Designer',
-    'Web Enthusiast'
-];*/
-
 function Hero() {
     
 

@@ -1,30 +1,24 @@
 import React, { useState } from "react";
 import TextArea from "./TextArea";
-import Aos from 'aos';
-import "aos/dist/aos.css";
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [status, setStatus] = useState("Submit");
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    let response = await fetch("http://localhost:5000/contact", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
-    setStatus("Submit");
-    let result = await response.json();
-    alert(result.status);
+    setStatus("Sending..");
+    emailjs.sendForm('service_gwx3dm8', 'template_jazn9gy', e.target, 'user_gZmqAGCe7d1TGImyQrhqL'
+    ).then(res=>{
+      setStatus("Sent!");
+
+      document.getElementById("name").value="";
+      document.getElementById("email").value="";
+      document.getElementById("message").value="";
+
+      document.getElementById()
+      
+    }).catch (err=> console.log(err))
   };
 
   return (
@@ -35,17 +29,17 @@ const ContactForm = () => {
             </div>
           <div className="horizontal">
             <label htmlFor="name">Name:</label>
-            <input type="text" id="name" required />
+            <input type="text" id="name" name="name" required />
           </div>
           <div className="horizontal">
             <label htmlFor="email">Email:</label>
-            <input type="email" id="email" required />
+            <input type="email" id="email" name="email" required />
           </div>
           <div className="horizontal">
             <label htmlFor="message">Message:</label>
             <TextArea />
           </div>
-          <div className="horizontal"><button type="submit">{status}</button></div>
+          <div className="horizontal"><button type="submit" value="send" id="submit">{status}</button></div>
         </form>
     </div>
   );

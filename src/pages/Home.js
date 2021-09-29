@@ -5,7 +5,9 @@ import Social from '../components/Social';
 import Tech from '../components/Tech';
 import ContactForm from '../components/ContactForm';
 import Hero from '../components/Hero';
-import Projects from "../components/Projects"
+import Projects from '../components/Projects';
+import Footer from '../components/Footer';
+import About from '../components/About';
 
 //import Data
 import { Technologies, Socials } from '../data/Data';
@@ -26,18 +28,27 @@ function Home() {
           <div>
             <Hero />
           </div>
-          <div className="technologies" id="section-2">
+          <div id="section-1">
+            <About />
+          </div>
+          <div id="section-2">
+            <h2>Languages</h2>
+            <div className="technologies">
             {Technologies.map((curr, key) => {
               return(
                 <Tech key={key} name={curr.name} icon={curr.icon} />
               )
             })}
+            </div>
           </div>
           <div id="section-3">
             <Projects />
           </div>
           <div className="space" id="section-4">
             <ContactForm />
+          </div>
+          <div className="footer-relative">
+            <Footer />
           </div>
         </div>
       </div>

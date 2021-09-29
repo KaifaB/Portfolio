@@ -1,59 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Projs } from "../data/Data"
 import { FaRegHandPointer } from 'react-icons/fa';
-import Aos from 'aos';
-import "aos/dist/aos.css";
 
-/*const titles = [
-    'Web Developer',
-    'Web Designer',
-    'Web Enthusiast'
-];*/
-const show = (e) => {
-    if (e.target.id[0] === "o") {
-        let id = e.target.id[7];
-        document.getElementById("overlay" + id).style.display = "block"
-        document.getElementById("pointer" + id).style.display = "none"
-    } else{
-        let id = e.target.id;
-        document.getElementById("overlay" + id).style.display = "block"
-        document.getElementById("pointer" + id).style.display = "none"
-    }
-}
-const gone = (e) => {
-    if (e.target.id[0] === "o") {
-        let id = e.target.id[7];
-        document.getElementById("overlay" + id).style.display = "none"
-        document.getElementById("pointer" + id).style.display = "block"
-    } else{
-        let id = e.target.id;
-        document.getElementById("overlay" + id).style.display = "none"
-        document.getElementById("pointer" + id).style.display = "block"
-    }
-}
+const Projects = () => {
 
-function Projects() {
+    const [isHovering, setIsHovering] = useState(-1);
+
+    function show(id){
+        setIsHovering(id);
+    }
+    function gone(id){
+        setIsHovering(-1);
+    }
+
     return (
       <div className="projects">
-          {Projs.map((curr, id) => {
-            return(
-                <div data-aos="fade-up" key={id} className="container">
-                    <h1>{curr.name}</h1>
-                    <div className="content" >
-                        <FaRegHandPointer id={"pointer" + id} />
-                        <img className="proj-img" alt=" project img" src={curr.image} id={id} onMouseEnter={show} onMouseLeave={gone}/>
-                    </div>
-                    <div id={"overlay" + id} onMouseEnter={show} onMouseLeave={gone}>
-                        <div id ={id} className="flex">
-                            <a href={curr.link}><button id={id} className="proj-btn">Website</button></a>
-                            <a href={curr.git}><button id={id} className="proj-btn">Code</button></a>
+          <h1>Projects</h1>
+          <div className="project-container">
+            {Projs.map((curr, id) => {
+                return(
+                    <div data-aos="fade-up" key={id} className="container">
+                        <h1>{curr.name}</h1>
+                        <div className="content" >
+                            <FaRegHandPointer id={"pointer" + id} onMouseEnter={() => show(id)}/>
+                            <img className="proj-img" alt="project img" src={curr.image} id={id} onMouseEnter={() => show(id)} onMouseLeave={() => gone(-1)}/>
+                        </div>
+                        <div id={"overlay" + id} className={`${isHovering=== id ? "show-item" : ""}`} onMouseEnter={() => show(id)} onMouseLeave={() => gone(-1)}>
+                            <div id ={id} className="flex">
+                            {curr.link === "" ? "" : <a href={curr.link}><button id={id} className="proj-btn">Website</button></a>}
+                                <a href={curr.git}><button id={id} className="proj-btn">Code</button></a>
+                            </div>
+                        </div>
+                        <p>Coded in {curr.tech}</p>
+                        <div id ={id} className="flex-mobile">
+                            {curr.link === "" ? "" : <a href={curr.link}><button id={id} className="mobile-btn">Website</button></a>}
+                            <a href={curr.git}><button id={id} className="mobile-btn">Code</button></a>
                         </div>
                     </div>
-                    <p>Coded in {curr.tech}</p>
-                </div>
-            )
-          })}
-            
+                )
+            })}
+            </div>
       </div>
     );
   }
