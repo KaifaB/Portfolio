@@ -15,15 +15,15 @@ function About() {
         <h2>Introduction</h2>
         <div data-aos="fade-right" className="abo about-section1">
             <p>
-              I have been coding since 2017. College taught me
-              me a great amount of basics in C++, from variables to higher level algorithms.
+              I have been coding since 2017. College taught me 
+              a great amount of basics in C++, from variables to higher level algorithms.
               I started talking to everyone who knew programming about programming.
             </p>
         </div>
         <div data-aos="fade-left" className="abo about-section2">
             <p>
               Through networking, I acquired my first front-end contract in 2020.
-              Although short, I had learned a lot about how web developing agencies run day to day.
+              Although short, I learned a lot about how web developing agencies run day to day.
             </p>
         </div>
         <div data-aos="fade-right" className="abo about-section3">
