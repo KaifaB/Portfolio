@@ -81,14 +81,14 @@ const Socials= [
     {
         name: "Rental Stars",
         image: Project2,
-        tech: "React, Node, Express",
+        tech: "React, (LocalStorage)",
         link: "https://rental-stars.herokuapp.com/",
         git: "https://github.com/KaifaB/rental-stars"
     },
     {
         name: "My Portfolio",
         image: Project3,
-        tech: "React, (PHP Mailer)",
+        tech: "React, (EmailJS)",
         link: "",
         git: "https://github.com/KaifaB/Portfolio"
     }

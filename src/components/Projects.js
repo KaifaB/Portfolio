@@ -27,14 +27,14 @@ const Projects = () => {
                         </div>
                         <div id={"overlay" + id} className={`${isHovering=== id ? "show-item" : ""}`} onMouseEnter={() => show(id)} onMouseLeave={() => gone(-1)}>
                             <div id ={id} className="flex">
-                            {curr.link === "" ? "" : <a href={curr.link}><button id={id} className="proj-btn">Website</button></a>}
-                                <a href={curr.git}><button id={id} className="proj-btn">Code</button></a>
+                            {curr.link === "" ? "" : <a target="_blank" href={curr.link}><button id={id} className="proj-btn">Website</button></a>}
+                                <a target="_blank" href={curr.git}><button id={id} className="proj-btn">Code</button></a>
                             </div>
                         </div>
                         <p>Coded in {curr.tech}</p>
                         <div id ={id} className="flex-mobile">
-                            {curr.link === "" ? "" : <a href={curr.link}><button id={id} className="mobile-btn">Website</button></a>}
-                            <a href={curr.git}><button id={id} className="mobile-btn">Code</button></a>
+                            {curr.link === "" ? "" : <a target="_blank" href={curr.link}><button id={id} className="mobile-btn">Website</button></a>}
+                            <a target="_blank" href={curr.git}><button id={id} className="mobile-btn">Code</button></a>
                         </div>
                     </div>
                 )
