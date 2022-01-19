@@ -17,6 +17,10 @@ html:focus-within{
   width: 100%;
   height:auto;
 }
+.appear{
+  animation: appear 1s;
+  animation-fill-mode: forwards;
+}
 /*-----------------------MOBILE CSS------------------------*/
 @media only screen and (max-width: 815px) {
   html {
@@ -127,9 +131,16 @@ html:focus-within{
     width: auto;
     height: auto;
   }
+  .about-section1{
+    opacity: 0;
+  }
   .about-section2{
+    opacity: 0;
     text-align: end;
     align-self: flex-end;
+  }
+  .about-section3{
+    opacity: 0;
   }
   .technologies{
     position: relative;
@@ -151,13 +162,12 @@ html:focus-within{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15%;
+    border-radius: 15px;
     width: 120px !important;
     height: 50px;
-    background: none;
     backdrop-filter: blur(5px);
   }
-  Tilt {
+  .tilt {
     border: 15px;
     width: 100px;
     background: rgb(239,239,239);
@@ -204,8 +214,9 @@ html:focus-within{
     text-align: center;
   }
   .container{
+    opacity: 0;
     margin: 20px auto !important;
-    width: 70%;
+    width: 75%;
     display: flex;
     justify-content: center;
   }
@@ -297,6 +308,7 @@ html:focus-within{
   }
   .contact{
     margin: 0 auto 10px auto !important;
+    opacity: 0;
   }
   .footer-relative{
     position: relative;
@@ -391,23 +403,28 @@ html:focus-within{
   font-family: 'Orbitron', sans-serif;
   text-align: center;
   }
-.abo{
-  width: 100%;
-  margin-bottom: 100px;
-  display:flex;
-}
-.about p{
-  font-family: 'Dosis', sans-serif;
-  font-size: 36px;
-  margin: 20px 60px;
-  width: 70%;
-}
-.about-section2{
-  display: flex;
-  text-align: end;
-  align-self: flex-end;
-  justify-content: flex-end;
-}
+  .abo{
+    width: 100%;
+    margin-bottom: 100px;
+    display:flex;
+  }
+  .about p{
+    font-family: 'Dosis', sans-serif;
+    font-size: 36px;
+    margin: 20px 60px;
+    width: 70%;
+  }
+  .about-section1{
+    opacity: 0;
+  }
+  .about-section2{
+    opacity: 0;
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+  .about-section3{
+    opacity: 0;
+  }
   .technologies{
     margin: 0 auto;
     position: relative;
@@ -430,15 +447,15 @@ html:focus-within{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 15%;
+    border-radius: 15px;
     width: 400px;
     height: 150px;
     background: none;
     backdrop-filter: blur(5px);
   }
-  Tilt {
+  .tilt {
     border: 15px;
-    background: rgb(239,239,239);
+    width: 300px;
     background: linear-gradient(90deg, rgba(239,239,239,0.6) 0%, rgba(239,239,239,0.1) 100%);
     border-top: 1px solid rgba(255,255,255,0.5);
     border-left: 1px solid rgba(255,255,255,0.5);
@@ -468,6 +485,7 @@ html:focus-within{
     justify-content: center;
   }
   .project-container{
+    opacity:0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -565,6 +583,7 @@ html:focus-within{
   position: fixed;
   bottom: 0;
   width: 40px;
+  z-index: 5;
 }
 .social-box{
   margin: 30px 0;
@@ -579,12 +598,11 @@ html:focus-within{
   color: white;
   width: 36px;
   height: 36px;
-  opacity: 0.7;
   transition: 0.4s;
 }
 .icon:hover{
-  opacity: 1;
   transform: scale(1.1);
+  color:black !important;
   cursor:pointer;
 }
 .icon-inner{
@@ -672,6 +690,8 @@ html:focus-within{
   display: grid;
   flex-direction: column;
   justify-content: center;
+  max-width: 340px;
+  min-height: 500px;
 }
 .container h1{
   margin: 4px auto;
@@ -696,8 +716,6 @@ html:focus-within{
   height: 100%;
   position: relative;
   background: #e0e0e0;
-  max-width: 800px;
-  /*background: rgba(199, 199, 199);*/
   box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
 }
 .container p{
@@ -711,6 +729,7 @@ html:focus-within{
   align-items: center;
 }
 .contact{
+  opacity: 0;
   padding: 2px;
   position: relative;
   background: #e0e0e0;
@@ -808,6 +827,25 @@ html:focus-within{
 }
 #root{
   width: 100vw;
+}
+.used{
+  color: #56B859;
+}
+.summary{
+  margin: 10px 0;
+  font-family: 'Open Sans Condensed', sans-serif !important;
+  font-size: 18px
+}
+/*fade in effect for most sections*/
+@keyframes appear {
+  from { 
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 /* The typing effect */
 @keyframes typing {

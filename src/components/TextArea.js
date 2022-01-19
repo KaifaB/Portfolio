@@ -1,6 +1,6 @@
 import React, { useState, useEffect} from 'react';
 
-function TextArea( props ) {
+function TextArea() {
     const [text, setText] = useState('');
     const change = (e) => {
         setText(e.target.value);

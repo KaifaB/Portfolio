@@ -1,6 +1,6 @@
-import { FaHtml5, FaCss3Alt, FaReact, FaWordpress, FaBootstrap, FaNode, FaNodeJs } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaReact, FaBootstrap } from 'react-icons/fa';
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
-import { SiJavascript, SiPhp, SiMysql, SiJquery, SiMongodb } from 'react-icons/si'
+import { SiJavascript, SiPhp, SiMysql, SiJquery } from 'react-icons/si'
 import Project1 from '../img/Project1.png';
 import Project2 from '../img/Project2.png';
 import Project3 from '../img/Project3.png';
@@ -25,10 +25,6 @@ const Technologies = [
         color: "#61DAFB"
     },
     {
-        icon: FaWordpress,
-        name: 'WordPress'
-    },
-    {
         icon: SiPhp,
         name: 'PHP'
     },
@@ -43,18 +39,6 @@ const Technologies = [
     {
         icon: SiJquery,
         name: 'JQuery'
-    },
-    {
-        icon: SiMongodb,
-        name: 'MongoDB'
-    },
-    {
-        icon: FaNodeJs,
-        name: 'Express'
-    },
-    {
-        icon: FaNode,
-        name: 'NodeJS'
     }
 ];
 
@@ -75,13 +59,15 @@ const Socials= [
         name: "Huntley Hub",
         image: Project1,
         tech: "HTML, CSS, Javascript, MySQL, PHP",
+        summary: "A Rate My Professor clone that allows user to rate professors and post school-based news/questions after logging in.",
         link: "https://huntleyhub.com/",
-        git: ""
+        git: "https://github.com/CSUPomona/RateIt"
     },
     {
         name: "Rental Stars",
         image: Project2,
         tech: "React, (LocalStorage)",
+        summary: "An ecommerce project that allows users to buy or rent scooters.",
         link: "https://rental-stars.herokuapp.com/",
         git: "https://github.com/KaifaB/rental-stars"
     },
@@ -89,6 +75,7 @@ const Socials= [
         name: "My Portfolio",
         image: Project3,
         tech: "React, (EmailJS)",
+        summary: "The website that you are scrolling throught now that showcases my superior skills.",
         link: "",
         git: "https://github.com/KaifaB/Portfolio"
     }

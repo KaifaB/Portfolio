@@ -19,7 +19,7 @@ const Projects = () => {
           <div className="project-container">
             {Projs.map((curr, id) => {
                 return(
-                    <div data-aos="fade-up" key={id} className="container">
+                    <div key={id} className="container" id={"project" + id}>
                         <h1>{curr.name}</h1>
                         <div className="content" >
                             <FaRegHandPointer id={"pointer" + id} onMouseEnter={() => show(id)}/>
@@ -27,14 +27,15 @@ const Projects = () => {
                         </div>
                         <div id={"overlay" + id} className={`${isHovering=== id ? "show-item" : ""}`} onMouseEnter={() => show(id)} onMouseLeave={() => gone(-1)}>
                             <div id ={id} className="flex">
-                            {curr.link === "" ? "" : <a target="_blank" href={curr.link}><button id={id} className="proj-btn">Website</button></a>}
-                                <a target="_blank" href={curr.git}><button id={id} className="proj-btn">Code</button></a>
+                            {curr.link === "" ? "" : <a target="_blank" rel="noreferrer" href={curr.link}><button id={id} className="proj-btn">Website</button></a>}
+                                <a target="_blank" rel="noreferrer" href={curr.git}><button id={id} className="proj-btn">Code</button></a>
                             </div>
                         </div>
-                        <p>Coded in {curr.tech}</p>
+                        <p className="used">Coded in {curr.tech}</p>
+                        <p className="summary">{curr.summary}</p>
                         <div id ={id} className="flex-mobile">
-                            {curr.link === "" ? "" : <a target="_blank" href={curr.link}><button id={id} className="mobile-btn">Website</button></a>}
-                            <a target="_blank" href={curr.git}><button id={id} className="mobile-btn">Code</button></a>
+                            {curr.link === "" ? "" : <a target="_blank" rel="noreferrer" href={curr.link}><button id={id} className="mobile-btn">Website</button></a>}
+                            <a target="_blank" rel="noreferrer" href={curr.git}><button id={id} className="mobile-btn">Code</button></a>
                         </div>
                     </div>
                 )
